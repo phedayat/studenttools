@@ -21,3 +21,12 @@
 .tool-input{
     margin: 5px;
 }
+
+.event-container{
+    border: .5px solid black;
+    height: fit-content;
+    width: fit-content;
+    padding: .5%;
+    margin: 5px;
+    white-space: nowrap;
+}

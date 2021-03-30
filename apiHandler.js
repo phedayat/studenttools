@@ -15,6 +15,10 @@ class ApiHandler{
 
     // SECTION: Static functions //
 
+    static sleep(ms){
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     /**
      * Gets the values of a form
      * 
@@ -34,6 +38,32 @@ class ApiHandler{
     }
 
     /**
+     * Appends a text node to an element
+     * 
+     * @param {string} id 
+     * @param {string} text The text to append
+     */
+    static appendText(id, text){
+        let textNode = document.createElement('div');
+        textNode.id = 'textChild';
+        textNode.className = 'event-container';
+        textNode.innerHTML = text;
+        document.getElementById(id).appendChild(textNode);
+    }
+
+    /**
+     * Removes all child nodes of an element
+     * 
+     * @param {string} id 
+     */
+    static clearChildren(id){
+        let elem = document.getElementById(id);
+        while(elem.hasChildNodes){
+            elem.removeChild(elem.firstChild);
+        }
+    }
+
+    /**
      * Formats a date according to RFC3339 for Google API
      * 
      * @param {Date} d A Date object
@@ -50,11 +80,26 @@ class ApiHandler{
              + pad(d.getUTCSeconds())+'Z';
     }
 
+    /**
+     * Get cookie values
+     * 
+     * @param {string} cookie document.cookie
+     * @param {string} key Key of value to get
+     * 
+     * @return Value
+     */
+    static getCookie(cookie, key){
+        let keyval = cookie.split('; ').find(elem => elem.startsWith(`${key}`))
+        return keyval.split('=')[1];
+    }
+
     // SECTION: Google Auth //
 
     authClick(event){
+        console.log('Auth Started');
         this.auth = gapi.auth2.getAuthInstance();
         this.auth.signIn();
+        console.log('Auth finished');
     }
 
     #initClient(){

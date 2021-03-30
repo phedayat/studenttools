@@ -17,27 +17,57 @@
 
         <!-- Main -->
         <div class="main-container" id="main">
+            <div id="calendarEnable" class="tool-container">
+                <h4><u>Enable Calendar</u></h4>
+                <form id="calEnable">
+                    <label for="calName">Name:</label>
+                    <input type="text" name="calName" id="calName" class="tool-input">
+                    <input type="submit" id="calSubmit" value="Submit" class="tool-input">
+                </form>
+            </div>
+
+            <div id="taskListEnable" class="tool-container">
+                <h4><u>Enable Task List</u></h4>
+                <form id="tlEnable">
+                    <label for="tlName">Name:</label>
+                    <input type="text" name="tlName" id="tlName" class="tool-input">
+                    <input type="submit" id="tlSubmit" value="Submit">
+                </form>
+            </div>
+
             <!-- Event Creation -->
             <div id="createEvent" class="tool-container">
                 <h4><u>Create Event</u></h4>
                 <form id="event">
                     <label for="eventName">Name:</label>
                     <input type="text" name="eventName" id="eventName" class="tool-input"><br>
-                    <label for="eventDatetime">Datetime:</label>
-                    <input type="datetime-local" name="eventDatetime" id="eventDatetime" class="tool-input"><br>
+                    <label for="eventStart">Start:</label>
+                    <input type="datetime-local" name="eventStart" id="eventStart" class="tool-input"><br>
+                    <label for="eventEnd">End:</label>
+                    <input type="datetime-local" name="eventEnd" id="eventEnd" class="tool-input"><br>
                     <label for="eventNotes">Notes:</label>
                     <input type="text" name="eventNotes" id="eventNotes" class="tool-input"><br>
                     <input type="submit" id="eventSubmit" class="tool-input" value="Submit">
                 </form>
             </div>
 
-            <div id="something" class="tool-container">
+            <div id="createTask" class="tool-container">
+                <h4><u>Create New Task</u></h4>
+                <form id="task">
+                    <label for="taskName">Name:</label>
+                    <input type="text" name="taskName" id="taskName" class="tool-input">
+                    <label for="taskDesc">Description:</label>
+                    <input type="text" name="taskDesc" id="taskDesc" class="tool-input" value="">
+                    <label for="taskDue">Due Date:</label>
+                    <input type="datetime-local" name="taskDue" id="taskDue" class="tool-input">
+                    <input type="submit" id="taskSubmit" class="tool-input">
+                </form>
+            </div>
+
+            <div id="checkCal" class="tool-container">
                 <h4><u>Check Calendar</u></h4>
-                <input type="button" onclick="someFun()" value="Check">
-                <p id="content">Hello</p>
-                <p id="content">World</p>
-                <p id="content">Whats</p>
-                <p id="content">Up</p>
+                <input type="button" onclick="update()" value="Check">
+                <p id="content"></p>
             </div>
         </div>
 
@@ -45,6 +75,7 @@
         <!-- Scripts -->
         <script src="https://apis.google.com/js/api.js"></script>
         <script type="text/javascript" src="./apiHandler.js" onload="new ApiHandler();"></script>
+        <script type="text/javascript" src="./func.js"></script>
         <script defer type="text/javascript" src="./index.js"></script>
     </body>
 </html>
