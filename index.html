@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Student Tools</title>
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="index.css" />
+    </head>
+
+    <body>
+        <!-- Header -->
+        <div id="header" class="header-container">
+            <h2 style="text-align: center;">
+                Student Google API Tools
+                <input style="float: right;" type="button" id="authorize" value="Sign In">
+            </h2>
+        </div>
+
+        <!-- Main -->
+        <div class="main-container" id="main">
+            <!-- Event Creation -->
+            <div id="createEvent" class="tool-container">
+                <h4><u>Create Event</u></h4>
+                <form id="event">
+                    <label for="eventName">Name:</label>
+                    <input type="text" name="eventName" id="eventName" class="tool-input"><br>
+                    <label for="eventDatetime">Datetime:</label>
+                    <input type="datetime-local" name="eventDatetime" id="eventDatetime" class="tool-input"><br>
+                    <label for="eventNotes">Notes:</label>
+                    <input type="text" name="eventNotes" id="eventNotes" class="tool-input"><br>
+                    <input type="submit" id="eventSubmit" class="tool-input" value="Submit">
+                </form>
+            </div>
+
+            <div id="something" class="tool-container">
+                <h4><u>Check Calendar</u></h4>
+                <input type="button" onclick="someFun()" value="Check">
+                <p id="content">Hello</p>
+                <p id="content">World</p>
+                <p id="content">Whats</p>
+                <p id="content">Up</p>
+            </div>
+        </div>
+
+
+        <!-- Scripts -->
+        <script src="https://apis.google.com/js/api.js"></script>
+        <script type="text/javascript" src="./apiHandler.js" onload="new ApiHandler();"></script>
+        <script defer type="text/javascript" src="./index.js"></script>
+    </body>
+</html>

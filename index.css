@@ -1,0 +1,23 @@
+.main-container{
+    display: flex;
+}
+
+.header-container{
+    margin: auto;
+    height: auto;
+    width: auto;
+    padding: .5%;
+}
+
+.tool-container{
+    /* display: block; */
+    border: 1px solid red;
+    width: max-content;
+    height: max-content;
+    padding: 2%;
+    margin: 5px;
+}
+
+.tool-input{
+    margin: 5px;
+}
