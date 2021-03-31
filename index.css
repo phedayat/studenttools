@@ -1,5 +1,7 @@
 .main-container{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .header-container{
@@ -12,8 +14,8 @@
 .tool-container{
     /* display: block; */
     border: 1px solid red;
-    width: max-content;
-    height: max-content;
+    width: fit-content;
+    height: fit-content;
     padding: 2%;
     margin: 5px;
 }

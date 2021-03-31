@@ -40,8 +40,8 @@ function insTask(){
 
     var task = {
         'title': val[0],
-        'notes': val[2],
-        'due': ApiHandler.ISODateString(new Date(val[1]))
+        'notes': val[1],
+        'due': ApiHandler.ISODateString(new Date(val[2]))
     }
 
     let tlId = ApiHandler.getCookie(document.cookie, 'taskListId');

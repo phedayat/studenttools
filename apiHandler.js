@@ -15,6 +15,15 @@ class ApiHandler{
 
     // SECTION: Static functions //
 
+    /**
+     * Sleeps for a specified amount of milliseconds
+     * 
+     * Usage: await ApiHandler.sleep(100)
+     * 
+     * @param {int} ms 
+     * 
+     * @returns A thenable-Promise
+     */
     static sleep(ms){
         return new Promise(resolve => setTimeout(resolve, ms));
     }

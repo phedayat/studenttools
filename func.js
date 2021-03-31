@@ -49,9 +49,9 @@ function findTaskList(tlName){
     });
 }
 
-async function insertNewTask(tlId, task){
+function insertNewTask(tlId, task){
     gapi.client.tasks.tasks.insert({
-        'taskListId': tlId,
-        'resource':task
+        'tasklist': tlId,
+        'resource': task
     }).then((res) => { console.log("Insert finished"); });
 }
